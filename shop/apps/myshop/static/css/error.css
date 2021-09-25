@@ -1,0 +1,20 @@
+body {
+	background-image: url(/media/index_texture.jpeg);
+	width: 980px;
+	height: 200px;
+}
+.error_main {
+	background-image: url(/media/header_texture.jpg);
+	display: block;
+	width: 700px;
+	margin-left: 350px;
+	border: 2px rgb(25, 100, 80) solid;
+	border-radius: 20px;
+}
+.error_main > h1 {
+	text-align: center;
+	margin: 10px;
+}
+.error_main > h2 {
+	margin-left: 40px;
+}

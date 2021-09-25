@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Authorization</title>
+        {% load static %}
+        <link rel=stylesheet href="{% static 'css/style_author.css' %}">
+    </head>
+    <body>
+        <form method="POST" action="/authorization">
+            {% csrf_token %}
+            <fieldset>
+                <legend> Авторизація </legend>
+                <label> Логін<br><input name="login" type="text" required></label><br>
+                <label> Пароль<br><input name="password" type="password" required></label><br>
+                <input type="submit" id="form_button2" value="Увійти">
+            </fieldset>
+        </form>
+    </body>
+</html>

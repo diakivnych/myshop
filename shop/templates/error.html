@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Error</title>
+        {% load static %}
+        <link rel=stylesheet href="{% static 'css/error.css' %}">
+    </head>
+    <body>
+        <div class="error_main">
+            <h1>
+                {% if error_type == 'not_authorized' %}
+                    Ви не авторизовані!
+                {% endif %}
+                
+                {% if error_type == 'not_in_stock' %}
+                    Ви хочете купити більшу кількість пристроїв, ніж є на складі!
+                {% endif %}
+
+                {% if error_type == 'have_not_enough_money' %}
+                    У вас недостатньо коштів!
+                {% endif %}
+
+            </h1>
+            <h2>
+                <ul>
+                    <li>
+                        {% if error_type == 'not_authorized' %}
+                            <a href="/authorization"> Увійти </a>
+                        {% endif %}
+
+                        {% if error_type == 'not_in_stock' %}
+                            <a href="/customer/{{Session.customer_id}}/basket"> Назад </a>
+                        {% endif %}
+
+                        {% if error_type == 'have_not_enough_money' %}
+                            <a href="/customer/{{Session.customer_id}}/basket"> Назад </a>
+                        {% endif %}
+                    </li>
+                    <li><a href="/"> На головну </a></li>
+                </ul>
+            </h2>
+        </div>
+    </body>
+</html>

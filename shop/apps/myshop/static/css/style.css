@@ -1,0 +1,207 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+header, section, footer, article, figure {
+    display: block;
+}
+body {
+    background-image: url(/media/index_texture.jpeg);
+}
+a {
+    color: black;
+    text-decoration-line: none;
+}
+a:hover {
+    text-decoration-line: underline;
+}
+#wrapper {
+    width: 960px;
+    margin: 10px auto;
+    text-align: left;
+}
+#main_header {
+    background-image: url(/media/header_texture.jpg);
+    background-color: white;
+    display: block;
+    float: left;
+    border: 2px solid dimgrey;
+    width: auto;
+    height: 50px;
+    text-align: center;
+    background-color:grey;
+    border-radius: 10px;
+}
+.header_catalog {
+    display: block;
+    float: left;
+    width: 98px;
+    height: 40px;
+    font-size: 25px;
+    padding-top: 10px;
+    border-right: 1px solid dimgrey;
+}
+.header_search {
+    display: block;
+    float: left;
+    height: 40px;
+    width: 557px;
+    font-size: 25px;
+    padding-top: 10px;
+}
+.header_search > form > input {
+    font-size: 20px;
+    padding: 3px;
+    width: 250px;
+    margin-left: 20px;
+    height: 20px;
+    border-radius: 10px;
+}
+.header_search > form > button {
+    font-size: 25px;
+    background-color: #6c7d9e;
+    border: 0px solid dimgrey;
+}
+.header_search > form  > button:hover {
+    text-decoration-line: underline;
+}
+.header_auth {
+    display: block;
+    float: left;
+    height: 40px;
+    width: 200px;
+    font-size: 25px;
+    padding-top: 10px;
+}
+.header_auth_registration > a {
+    display: block;
+    float: left;
+    text-align: center;
+    width: 100px;
+}
+.header_auth_authorization > a {
+    display: block;
+    float: left;
+    text-align: center;
+    width: 100px; 
+}
+
+.header_basket {
+    display: block;
+    float: left;
+    height: 40px;
+    width: 98px;
+    font-size: 25px;
+    padding-top: 10px;
+    border-left: 1px solid dimgrey;
+}
+.sidebar {
+    display: block;
+    float: left;
+    width: 85px;
+    padding-left: 15px;
+    font-size: 17px;
+}
+#main_section {
+    background-color: white;
+    display: block;
+    float: left;
+    width: 760px;
+}
+.main_head {
+    background-image: url(/media/index_texture.jpeg);
+    font-size: 30px;
+    text-align: center;
+    width: 760px;
+}
+.main_head_message {
+    background-image: url(/media/index_texture.jpeg);
+    font-size: 30px;
+    text-align: center;
+    width: 760px;
+    border-bottom: 1px solid dimgrey;
+    padding-bottom: 10px;
+}
+#main_footer {
+    background-image: url(/media/header_texture.jpg);
+    display: block;
+    background-color: white;
+    border: 2px solid grey;
+    padding: 20px;
+    float: left;
+    width: 920px;
+    text-align: center;
+    border-radius: 10px;
+}
+.image {
+    width: 300px;
+    height: 200px;
+}
+.image2 {
+    width: 200px;
+    height: 300px;
+    padding-left: 40px;
+    padding-bottom: 30px;
+}
+.content {
+    background-color: white;
+    display: block;
+    float: left;
+    border-bottom: 1px solid grey;
+    border-right: 1px solid grey;
+    border-left: 1px solid grey;
+}
+.content > figure {
+    display: block;
+    float: left;
+    width: 300px;
+    padding-top: 30px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.content > article {
+    display: block;
+    float: left;
+    width: 300px;
+    min-height: 334px;
+}
+.content > .buy_product {
+    display: block;
+    float: right;
+    width: 147px;
+    padding-top: 125px;
+    text-align: center;
+    font-size: 25px;
+}
+.content_button_basket {
+    display: block;
+    float: left;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    margin-left: 30px;
+}
+.content_button_index {
+    width: 90px;
+    height: 30px;
+    font-size: 20px;
+}
+.content > article > h3 {
+    text-align: center;
+}
+.content > article > a {
+    padding-left: 120px;
+    font-size: 20px;
+}
+.basket_result {
+    background-image: url(/media/index_texture.jpeg);
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+.basket_result > form > button {
+    width: 120px;
+    height: 50px;
+    font-size: 20px;
+}

@@ -1,0 +1,35 @@
+html {
+  background-image: url(/media/index_texture.jpeg);
+  font-size: 30px;
+  width: 980px;
+}
+
+body {
+  background-color: white;
+  border: 2px rgb(25, 100, 80) solid;
+  float: left;
+  display: block;
+  margin-left: 450px;
+  width: 450px;
+  border-radius: 10px;
+}
+fieldset {
+  background-color: white;
+  padding-left: 85px;
+  border-radius: 10px;
+}
+legend {
+  margin-left: 40px;
+	font-size: 40px;
+}
+input {
+  font-size: 20px;
+}
+#form_button1 {
+  margin-left: 50px;
+}
+#form_button2 {
+  margin-left: 100px;
+}
+input:invalid {border-color: red;}
+input:valid {border-color: green;}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <title>SHOP</title>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel=stylesheet href="{% static 'css/style.css' %}">
+    
+</head>
+<body>
+    <div id="wrapper">
+        <header id="main_header">
+            <div class="header_catalog">
+                <a href="/product/all"><b>Каталог</b></a>
+            </div>
+            <div class="header_search">
+                <form method="POST" action="/search_by_key">
+                    {% csrf_token %}
+                    <input type="text" name="search_key">
+                    <button type="submit"><b>Пошук</b></button>
+                </form>
+            </div>
+
+            <div class="header_auth">
+                {% if Session.is_customer_authorized %}
+                <a href="/logout"><b>Вихід</b></a>
+                {% else %}
+                <div class="header_auth_registration">
+                    <a href="/registration"><b>Реєстрація</b></a>    
+                </div>
+                <div class="header_auth_authorization">
+                    <a href="/authorization"><b>Вхід</b></a>
+                </div>
+                {% endif %}
+            </div>
+            <div class="header_basket">
+                <a href="/customer/{{Session.customer_id}}/basket"><b>Кошик</b></a>
+            </div>
+        </header>
+
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <a href="/product/all"><b>Головна</b></a>
+                    <ul>
+                        <li>
+                           <a href="/product/laptops">Ноутбуки</a>
+                       </li>
+                       <li>
+                           <a href="/product/smartphones">Смартфони</a>
+                       </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <section id="main_section">
+            <div class="main_head">{{message}}</div>
+            {% for device in devices %}
+            <div class="content">
+                <figure>
+                    <a href="/product/{{device.get_class_name}}/{{device.id}}/comments">
+                        {% if device.get_class_name == 'Laptop' %}
+                        <img src="/media/{{device.img}}" alt="image" class="image">
+                        {% else %}
+                        <img src="/media/{{device.img}}" alt="image" class="image2">
+                        {% endif %}
+                    </a>
+                </figure>
+                <article>
+                    <br><h3>{{device.name}}</h3><br><br>
+                    <ul>
+                        {% for information in device.info %}
+                        <li>
+                            {{information}}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <br>
+                    Кількість на складі: | {{device.get_cnt_in_stock}} |<br>
+                    <br><br>
+                    <a href="/product/{{device.get_class_name}}/{{device.id}}/comments"><b>Відгуки({{device.get_cnt_reviews}})</b></a>
+                </article>
+                <div class="buy_product">
+                    {{device.price}} грн<br>
+                    <form method="POST" action="/add_to_basket/{{device.get_class_name}}/{{device.id}}">
+                        {% csrf_token %}
+                        <button type="submit" class="content_button_index">Купити</button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </section>
+        
+        <div class="sidebar">
+            
+        </div>
+
+        <footer id="main_footer">
+            <h4>Copyright &copy 2020-2021</h4>
+        </footer>
+    </div>
+</body>
+</html>
