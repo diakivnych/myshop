@@ -28,7 +28,8 @@ SECRET_KEY = 'hxawke@gy*qkj+u)o1%wexxtjn01z%p8b6g8e0^*l6j%egpgy9'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'myshoptestapp.herokuapp.com'
+    'myshoptestapp.herokuapp.com',
+    '127.0.0.1'
 ]
 
 
